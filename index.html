@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
 <script type="module">
-import { add } from "./build/release.js";
-document.body.innerText = add(1, 2);
+import { add, isPrime } from "./build/release.js";
+document.body.innerHTML = add(1, 2) + '<br>';
+document.body.innerHTML += '<p>isPrime(5) = ' + isPrime(5) + '</p>';
+document.body.innerHTML += '<p>isPrime(30) = ' + isPrime(30) + '</p>';
+document.body.innerHTML += '<p>isPrime(97) = ' + isPrime(97) + '</p>';
+document.body.innerHTML += '<p>isPrime(60) = ' + isPrime(60) + '</p>';
 </script>
 </head>
 <body></body>

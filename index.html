@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <script type="module">
-import { add, isPrime } from "./build/release.js";
+import { add, isPrime, findFirstNPrimes } from "./build/release.js";
 document.body.innerHTML = add(1, 2) + '<br>';
 document.body.innerHTML += '<p>isPrime(5) = ' + isPrime(5) + '</p>';
 document.body.innerHTML += '<p>isPrime(30) = ' + isPrime(30) + '</p>';
@@ -10,6 +10,23 @@ document.body.innerHTML += '<p>isPrime(97) = ' + isPrime(97) + '</p>';
 document.body.innerHTML += '<p>isPrime(60) = ' + isPrime(60) + '</p>';
 document.body.innerHTML += '<p>isPrime(77) = ' + isPrime(77) + '</p>';
 document.body.innerHTML += '<p>isPrime(83) = ' + isPrime(83) + '</p>';
+
+function printPrimeNumbers(n) {
+    const results = findFirstNPrimes(n);
+    document.body.innerHTML += '<p>findFirstNPrimes(' + n + ')';
+    for (let i = 0; i < results.length; i++) {
+        document.body.innerHTML += results[i];
+        if (i !== results.length - 1) {
+            document.body.innerHTML += ',';
+        }
+    }
+    document.body.innerHTML += '</p>';
+}
+
+printPrimeNumbers(5);
+printPrimeNumbers(9);
+printPrimeNumbers(20)
+
 </script>
 </head>
 <body></body>

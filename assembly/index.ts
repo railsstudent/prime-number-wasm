@@ -4,9 +4,9 @@
 @external("env", "console.log")
 declare function primeNumberLog(primeNumber: i32): void;
 
-export function add(a: i32, b: i32): i32 {
-  return a + b;
-}
+// export function add(a: i32, b: i32): i32 {
+//   return a + b;
+// }
 
 export function isPrime(n: i32): bool {
   if (n <= 1) {

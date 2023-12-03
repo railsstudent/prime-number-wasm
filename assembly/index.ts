@@ -1,12 +1,7 @@
 // The entry file of your WebAssembly module.
 
 // module import
-@external("env", "console.log")
 declare function primeNumberLog(primeNumber: i32): void;
-
-// export function add(a: i32, b: i32): i32 {
-//   return a + b;
-// }
 
 export function isPrime(n: i32): bool {
   if (n <= 1) {
@@ -28,18 +23,19 @@ export function isPrime(n: i32): bool {
 
 export function findFirstNPrimes(n: i32): Array<i32> {
   let primes = new Array<i32>(n);
+
   for (let i = 0; i < n; i++) {
     primes[i] = 0;
   }
   primes[0] = 2;
-  let num = 3;
+  primeNumberLog(primes[0]);
 
+  let num = 3;
   let index = 0;
   while(index < n - 1) {
     let isPrime = true;
 
     for (let i = 0; i <= index; i++) {
-      primeNumberLog(primes[i]);
       if (num % primes[i] === 0) {
         isPrime = false;
         break;
@@ -47,6 +43,7 @@ export function findFirstNPrimes(n: i32): Array<i32> {
     }
 
     if (isPrime) {
+      primeNumberLog(num);
       primes[index + 1] = num;
       index = index + 1;
     }

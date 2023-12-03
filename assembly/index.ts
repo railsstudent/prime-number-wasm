@@ -2,7 +2,7 @@
 
 // module import
 @external("env", "console.log")
-export declare function primeNumberLog(primeNumber: i32): void;
+declare function primeNumberLog(primeNumber: i32): void;
 
 export function add(a: i32, b: i32): i32 {
   return a + b;

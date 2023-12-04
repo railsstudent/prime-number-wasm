@@ -7,7 +7,7 @@ export function isPrime(n: i32): bool {
   if (n <= 1) {
     return false;
   } else if (n === 2 || n === 3) {
-    return false;
+    return true;
   } else if (n % 2 === 0 || n % 3 === 0) {
     return false;
   }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <script type="module">
-import { isPrime, findFirstNPrimes } from "./build/release.js";
+import { isPrime, findFirstNPrimes, optimizedSieve } from "./build/release.js";
 document.body.innerHTML = '<p>isPrime(5) = ' + isPrime(5) + '</p>';
 document.body.innerHTML += '<p>isPrime(30) = ' + isPrime(30) + '</p>';
 document.body.innerHTML += '<p>isPrime(97) = ' + isPrime(97) + '</p>';
@@ -24,7 +24,24 @@ function printPrimeNumbers(n) {
 
 printPrimeNumbers(5);
 printPrimeNumbers(9);
-printPrimeNumbers(20)
+printPrimeNumbers(20);
+
+function sieve(n) {
+    const results = optimizedSieve(n);
+    document.body.innerHTML += '<p>optimizedSieve(' + n + ')';
+    for (let i = 0; i < results.length; i++) {
+        document.body.innerHTML += results[i];
+        if (i !== results.length - 1) {
+            document.body.innerHTML += ',';
+        }
+    }
+    document.body.innerHTML += '</p>';
+}
+
+sieve(5);
+sieve(9);
+sieve(20);
+sieve(97);
 
 </script>
 </head>
